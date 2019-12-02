@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{title}}</h1>
+  <p>Заполните таблицу:</p>
+  <form method="POST">
+    <input type="text" name="left" placeholder="Сникерс">
+    <input type="text" name="right" placeholder="Марс">
+    <input type="submit" value="Выдать">
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>В левой руке</th>
+        <th>В правой</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+	  <td>{{ left }}</td>
+	  <td>{{ right }}</td>
+         </tr>
+    </tbody>
+  </table>
+{% endblock %}

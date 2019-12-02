@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{title}}</h1>
+  <p>Сколько слов в мире слов поможет узнать Сколькослов.</p>
+  <form method="POST">
+    <textarea name="words" placeholder="Ваши слова сюда, пожалуйста">{{ text }}</textarea>
+    <input type="submit" value="Сколькослов!">
+  </form>
+  {% if result %}
+  <code>{{ result }}</code>
+  {% endif %}
+{% endblock %}

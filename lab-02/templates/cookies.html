@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <p>Печенье &mdash; небольшие кусочки печеного сладкого теста. Что может быть лучше и удобней печенья к повседневному чаю или кофе?</p>
+  <p>Я, как большая любительница творога, к вам с выпечкой на творожном тесте. Очень вкусное и в меру сладкое печенье.</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ключ</th>
+        <th>Значение</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cookie in cookies %}
+        <tr>
+	  <td>{{ cookie }}</td>
+	  <td>{{ cookies[cookie] }}</td>
+         </tr>
+       {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

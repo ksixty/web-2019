@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{title}}</h1>
+  <p>Худший калькулятор в мире калькуляторов:</p>
+  <form method="GET">
+    <input type="text" name="left" placeholder="Число" value="{{ left }}">
+    <select name="operand">
+      <option>+</option>
+      <option>-</option>
+      <option>*</option>
+      <option>/<option>
+    </select>
+    <input type="text" name="right" placeholder="Число" value="{{ right }}">
+    <input type="submit" value="=">
+    {% if result %}<code>{{ result }}</code>{% endif %}
+  </form>
+  <h2>История операций</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Выражение</th>
+        <th>Ответ</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cookie in cookies %}
+        <tr>
+	  {% set expr, value = cookie.split('=') %}
+	  <td>{{ expr }}</td>
+	  <td>{{ value }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <p>Вот бывают скобочки, а бывают ещё вопросики. Тут вопросики.</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ключ</th>
+        <th>Значение</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for arg in args %}
+        <tr>
+	  <td>{{ arg }}</td>
+	  <td>{{ args[arg] }}</td>
+         </tr>
+       {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

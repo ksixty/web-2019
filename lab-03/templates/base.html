@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__title">Лаба 3</div>
+      <ul class="header__menu menu">
+	{% for item in menu_items %}
+	<li class="menu__item">
+	  {% if item.current %}
+	    {{ item.text }}
+	  {% else %}
+	    <a href="{{item.url}}" class="menu__link">{{ item.text }}</a>
+	  {% endif %}
+	</li>
+	{% endfor %}
+      </ul>
+    </div>
+    {% if info %}<div class="info">{{ info }}</div>{% endif %}
+    <div class="content">{% block content %}{% endblock %}</div>
+    <div class="footer">Ваня Клименко, 2019 &mdash; Лицензия CC-BY-SA 2.0</div>
+  </body>
+</html>
